@@ -11,15 +11,40 @@ return {
   },
   cmd = 'Neotree',
   keys = {
-    { '\\', ':Neotree reveal<CR>', { desc = 'NeoTree reveal' } },
+    { '<leader>e', ':Neotree toggle<CR>', { desc = 'NeoTree reveal' } },
   },
   opts = {
     filesystem = {
       window = {
         mappings = {
-          ['\\'] = 'close_window',
+          ['<leader>e'] = 'close_window',
         },
       },
     },
   },
+  config = function()
+    require('neo-tree').setup {
+      close_if_last_window = true,
+
+      file_size = {
+        enabled = false,
+      },
+      type = {
+        enabled = false,
+      },
+      last_modified = {
+        enabled = false,
+      },
+      created = {
+        enabled = false,
+      },
+      filesystem = {
+        follow_current_file = {
+          enabled = true,
+          leave_dirs_open = false,
+        },
+        group_empty_dirs = true,
+      },
+    }
+  end,
 }
