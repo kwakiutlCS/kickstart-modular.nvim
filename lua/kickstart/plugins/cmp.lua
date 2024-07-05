@@ -103,8 +103,8 @@ return {
         },
         sources = {
           { name = 'luasnip', keyword_length = 3 },
-          { name = 'nvim_lsp', keyword_length = 3, max_item_count = 7 },
-          { name = 'copilot', keyword_length = 3 },
+          { name = 'nvim_lsp' },
+          { name = 'copilot', keyword_length = 5 },
           { name = 'path', keyword_length = 3 },
         },
       }
